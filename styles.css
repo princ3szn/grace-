@@ -1,3 +1,4 @@
+/* General Styling */
 body {
     font-family: 'Arial', sans-serif;
     text-align: center;
@@ -5,6 +6,7 @@ body {
     padding: 20px;
 }
 
+/* Container Styling */
 .container {
     background: white;
     padding: 20px;
@@ -16,14 +18,17 @@ body {
     animation: fadeIn 2s ease-in-out;
 }
 
+/* Romantic Text Glow */
 h1, h2, h3 {
     color: #d6336c;
+    text-shadow: 2px 2px 8px rgba(255, 0, 76, 0.5);
 }
 
 p {
     font-size: 18px;
 }
 
+/* Button Styling */
 .btn {
     background-color: #ff4d6d;
     color: white;
@@ -32,13 +37,15 @@ p {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s;
 }
 
 .btn:hover {
     transform: scale(1.1);
+    background-color: #e60026;
 }
 
+/* Hidden Message */
 #hidden-message {
     display: none;
     font-size: 20px;
@@ -47,18 +54,33 @@ p {
     margin-top: 20px;
 }
 
+/* Heartbeat Animation */
 .hearts {
     font-size: 24px;
     margin-top: 20px;
     animation: heartbeat 1.5s infinite;
 }
 
-/* Animations */
+/* Floating Hearts Animation */
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100px); opacity: 0; }
+}
+
+.hearts::after {
+    content: "❤️ ❤️ ❤️";
+    display: block;
+    font-size: 20px;
+    animation: floatUp 3s infinite ease-in-out;
+}
+
+/* Fade-in Animation */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* Heartbeat Animation */
 @keyframes heartbeat {
     0% { transform: scale(1); }
     50% { transform: scale(1.2); }
